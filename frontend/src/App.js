@@ -1,10 +1,9 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Landing from "./components/Landing";
-import Marquee from "./components/Marquee";
-import Coming from "./components/Coming";
 import LocomotiveScroll from "locomotive-scroll";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Account from "./components/Account";
+import Home from "./components/Home";
 const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
   return (
@@ -12,11 +11,10 @@ const App = () => {
       <div className="w-full relative box-border min-h-screen">
         <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/details" />
+          <Route path="/account" element={<Account />} />
         </Routes>
-        <Landing />
-        <Marquee />
-        <Coming />
       </div>
     </BrowserRouter>
   );
