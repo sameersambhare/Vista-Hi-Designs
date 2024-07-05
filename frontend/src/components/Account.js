@@ -41,13 +41,12 @@ const Account = () => {
 
           <div className="buttons flex gap-3">
             <button
-              type="submit"
               className="px-[2vw] py-[0.5vw] bg-[#333333] text-white rounded-full font-semibold"
             >
               Sign In
             </button>
             <Link>
-              <p className="px-[2vw] py-[0.5vw]  border-[0.1vw] border-black rounded-full ">
+              <p className="px-[2vw] py-[0.5vw]  border-[0.1vw] border-black rounded-full font-semibold ">
                 Create Account
               </p>
             </Link>

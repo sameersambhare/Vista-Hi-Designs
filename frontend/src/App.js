@@ -4,11 +4,12 @@ import LocomotiveScroll from "locomotive-scroll";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Account from "./components/Account";
 import Home from "./components/Home";
+import Cart from "./components/Cart";
 const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
   return (
     <BrowserRouter>
-      <div className="w-full relative box-border min-h-screen">
+      <div className="w-full relative box-border min-h-screen overflow-hidden">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

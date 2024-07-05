@@ -6,9 +6,17 @@ import { IoBagOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { navLinks } from "../constants";
 import DropDown from "./DropDown";
+import Cart from "./Cart";
+import Search from "./Search";
 const Navbar = () => {
   const [currentIndex, setCurrentindex] = useState(0);
   const [showDropDown, setShowDropDown] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const hidecart = () => {
+    setShowCart(false);
+    setShowSearch(false);
+  };
   return (
     <div
       className="NAVBAR w-full fixed z-10 top-0 left-0 bg-white"
@@ -41,7 +49,7 @@ const Navbar = () => {
                 </li>
               </Link>
               {index === currentIndex ? (
-                <div className="line w-full h-[0.3vw] bg-blue-400  absolute top-[2.5vw] left-0"></div>
+                <div className="line w-full h-[0.3vw] bg-[#34B8C4]  absolute top-[2.5vw] left-0"></div>
               ) : null}
             </div>
           ))}
@@ -52,14 +60,21 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="nav-icons flex gap-10 text-[1.5vw]">
-          <Link to="/search">
+          <Link
+            onClick={() => {
+              setShowSearch(true);
+            }}
+          >
             <CiSearch className="cursor-pointer" />
           </Link>
           <Link to="/account">
             <IoPersonOutline className="cursor-pointer" />
           </Link>
-          <Link to="/cart">
-            {" "}
+          <Link
+            onClick={() => {
+              setShowCart(true);
+            }}
+          >
             <div className="cart relative">
               <div className="no-of-items absolute top-0 right-[-0.7vw] bg-[#38B9C5] w-[1.2vw] h-[1.2vw] rounded-full flex items-center justify-center ">
                 <p className="text-[0.8vw] text-white">0</p>
@@ -87,6 +102,8 @@ const Navbar = () => {
         <li>Sale</li>
       </div>
       {showDropDown && <DropDown />}
+      {showCart && <Cart hidecart={hidecart} />}
+      {showSearch && <Search hidecart={hidecart} />}
     </div>
   );
 };
