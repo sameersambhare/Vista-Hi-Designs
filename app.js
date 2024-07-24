@@ -2,9 +2,14 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 5000;
 const path = require("path");
+const dotenv = require("dotenv");
+dotenv.config();
 const mongoose = require("mongoose");
-const { MongoUrl } = require("./key");
-mongoose.connect(MongoUrl);
+const MongoUsername = process.env.MongoUsername;
+const MongoPassword = process.env.MongoPassword;
+mongoose.connect(
+  `mongodb+srv://${MongoUsername}:${MongoPassword}@cluster0.bee27uq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+);
 mongoose.connection.on("connected", () => {
   console.log("Successfully connected to database.");
 });

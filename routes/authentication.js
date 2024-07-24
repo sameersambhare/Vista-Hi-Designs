@@ -3,7 +3,7 @@ const router = express.Router();
 const USER = require("../models/user");
 const bcrypt = require("bcrypt");
 const JWT = require("jsonwebtoken");
-const { JWT_Secret } = require("../key");
+const JWT_Secret = process.env.JWT_Secret;
 router.post("/signup", (req, res) => {
   const { firstname, lastname, email, password } = req.body;
   if (!firstname || !lastname || !email || !password) {

@@ -14,7 +14,7 @@ const Navbar = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
-  const deadLine = "July,30,2024";
+  const deadLine = "August,1,2024";
   const getTime = () => {
     const time = Date.parse(deadLine) - Date.now();
     setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
@@ -50,7 +50,7 @@ const Navbar = () => {
           {days < 10 ? "0" + days : days} days,{" "}
           {hours < 10 ? "0" + hours : hours} hours,{" "}
           {minutes < 10 ? "0" + minutes : minutes} minutes,{" "}
-          {seconds < 10 ? "0" + seconds : seconds} seconds | July 4th Sale: Up
+          {seconds < 10 ? "0" + seconds : seconds} seconds | August 1st Sale: Up
           to 30% off{" "}
           <Link to="/details">
             <span className="underline">See Details</span>
