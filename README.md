@@ -20,12 +20,3 @@ The website is hosted at [reef1.vercel.app](https://reef1.vercel.app).
 - **Backend**: Node.js, Express.js, MongoDB (database), Mongoose (ODM).
 - **Deployment**: Vercel (for frontend), Heroku (for backend), MongoDB Atlas (database hosting).
 
-### Getting Started
-
-Follow these steps to get the project up and running on your local machine:
-
-1. **Clone the repository**:
-
-   ```bash
-   git clone <repository-url>
-   cd <project-folder>
