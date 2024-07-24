@@ -9,6 +9,23 @@ const Marquee = () => {
   const startScroll = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".Marquee",
+          start: "-10% top",
+        },
+      })
+      .to(".overlay1", {
+        y: "-23vw",
+        duration: 1,
+        ease: "power2.inOut",
+      })
+      .to(".overlay2", {
+        y: "-27vw",
+        duration: 1,
+        ease: "power2.inOut",
+      });
     gsap.fromTo(
       startScroll.current,
       {
@@ -30,16 +47,15 @@ const Marquee = () => {
   return (
     <div
       ref={startTrigger}
-      style={{
-        background: "rgb(39,39,42)",
-        background:
-          "linear-gradient(180deg, rgba(39,39,42,1) 0%, rgba(39,38,38,1) 45%, rgba(112,112,112,1) 100%)",
-      }}
-      className="Marquee w-full min-h-screen pt-10 items-center flex  overflow-hidden  justify-center flex-col relative"
+      className="Marquee w-full min-h-screen pt-10 items-center flex bg-zinc-800 overflow-hidden  justify-center flex-col relative"
     >
-      <div className="marquee-top-image w-full text-right px-8 flex justify-end">
-        <img src={MarqueeTop} alt="" />
+      <div className="w-full flex justify-end px-8">
+        <div className="marquee-top-image w-[34vw] h-[23vw] relative overflow-hidden">
+          <div className="overlay1 h-full w-full absolute top-0 left-0 bg-zinc-800 z-[8]"></div>
+          <img src={MarqueeTop} alt="" className="w-full object-cover" />
+        </div>
       </div>
+
       <div className="scrolling whitespace-nowrap ">
         <motion.h2
           className=" text-white mt-3 font-['Playfair_Display'] text-[2.1vw] leading-none font-extralight"
@@ -78,8 +94,11 @@ const Marquee = () => {
           Olivia PontonReef X Olivia Ponton Olivia PontonReef X Olivia Ponton
         </motion.h2>
       </div>
-      <div className="marquee-bottom-image px-8 w-full justify-start flex items-center pb-10">
-        <img src={MarqueeBottom} alt="" />
+      <div className="w-full flex justify-start">
+        <div className="marquee-bottom-image w-[22vw] h-[27vw] relative overflow-hidden mb-7 ml-[20vw]">
+          <div className="overlay2 h-full w-full absolute top-0 left-0 z-[8] bg-zinc-800"></div>
+          <img src={MarqueeBottom} alt="" className="w-full object-cover" />
+        </div>
       </div>
     </div>
   );

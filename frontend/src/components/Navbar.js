@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../images/Reel.svg";
 import { CiSearch } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
@@ -9,6 +9,26 @@ import DropDown from "./DropDown";
 import Cart from "./Cart";
 import Search from "./Search";
 const Navbar = () => {
+  // <-------Timer---------------->
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+  const deadLine = "July,30,2024";
+  const getTime = () => {
+    const time = Date.parse(deadLine) - Date.now();
+    setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
+    setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
+    setMinutes(Math.floor((time / 1000 / 60) % 60));
+    setSeconds(Math.floor((time / 1000) % 60));
+  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getTime();
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  // <---------------------------->
   const [currentIndex, setCurrentindex] = useState(0);
   const [showDropDown, setShowDropDown] = useState(false);
   const [showCart, setShowCart] = useState(false);
@@ -27,8 +47,11 @@ const Navbar = () => {
       {/* DEALS--------------------------------------- */}
       <div className="deals w-full bg-[#7A1414] text-[0.9vw] text-white  py-[0.4vw] text-center">
         <p className="capitalize">
-          5 days, 9 hours, 48 minutes, 3 seconds | July 4th Sale: Up to 30% off
-          |{" "}
+          {days < 10 ? "0" + days : days} days,{" "}
+          {hours < 10 ? "0" + hours : hours} hours,{" "}
+          {minutes < 10 ? "0" + minutes : minutes} minutes,{" "}
+          {seconds < 10 ? "0" + seconds : seconds} seconds | July 4th Sale: Up
+          to 30% off{" "}
           <Link to="/details">
             <span className="underline">See Details</span>
           </Link>
