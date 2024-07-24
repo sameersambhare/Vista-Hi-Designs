@@ -4,7 +4,7 @@ This repository contains the source code for a full stack ecommerce website buil
 
 ### Website Link
 
-The website is hosted at [reef.vercel.app](https://reef.vercel.app).
+The website is hosted at [reef.vercel.app](https://reef1.vercel.app).
 
 ### Features
 
