@@ -3,7 +3,7 @@ import { AboutUs, Information, CustomerCare } from "../constants";
 import footerVid from '../videos/footerVid.mp4'
 import { Locations } from "../constants";
 const Footer = () => {
-    return <div className="footer w-full min-h-screen bg-zinc-500 relative">
+    return <div className="footer w-full min-h-screen relative">
         <video autoPlay muted style={{ width: "100%", height: "auto" }} loop>
             <source src={footerVid} type="video/mp4" />
         </video>
