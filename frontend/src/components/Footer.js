@@ -1,6 +1,6 @@
 import React from "react";
 import { AboutUs, Information, CustomerCare } from "../constants";
-import footerVid from '../videos/footerVid.mp4'
+import footerVid from '../videos/footerVidCompressed.mp4'
 import { Locations } from "../constants";
 const Footer = () => {
     return <div className="footer w-full min-h-screen relative">
