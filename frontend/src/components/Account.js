@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import Footer from './Footer'
 const Account = () => {
   const Sucess = (msg) => {
     toast.success(msg);
@@ -34,7 +35,7 @@ const Account = () => {
       });
   };
   return (
-    <div className="w-full h-screen bg-white">
+    <div className="w-full min-h-screen bg-white">
       <div className="Account w-full h-screen items-center justify-center flex flex-col font-['Inter']">
         <div className="w-1/2 mt-[4vw] p-[4vw] flex flex-col gap-[3vw]">
           <h1 className="text-[2.5vw] font-semibold text-center">Login</h1>
@@ -86,6 +87,7 @@ const Account = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

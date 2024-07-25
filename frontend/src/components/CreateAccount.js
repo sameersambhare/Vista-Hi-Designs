@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import Footer from "./Footer";
 const CreateAccount = () => {
   const Sucess = (msg) => {
     toast.success(msg);
@@ -112,6 +113,7 @@ const CreateAccount = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

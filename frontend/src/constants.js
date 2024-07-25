@@ -31,7 +31,6 @@ import vistasandals from "./images/vistasandals.png";
 import thelaydaysneaker from "./images/thelaydaysneaker.png";
 import cushionbondisandals from "./images/cushionbondisandals.png";
 
-
 export const collections = [
   { id: "Sunny Arrianah", img: sunnyarrianah, url: "/sunnyarrianah" },
   {
@@ -97,3 +96,37 @@ export const imageMenu = [
   { photo: Black, url: BlackAdd },
   { photo: White, url: WhiteAdd },
 ];
+
+export const AboutUs = [
+  { id: "About Us", link: "/aboutus" },
+  { id: "Reef Encinitas Retail Store", link: "/retailstore" },
+  { id: "Careers", link: "/careers" },
+  { id: "Blog", link: "/blog" },
+];
+export const CustomerCare = [
+  { id: "Contact Us", link: "/contactus" },
+  { id: "Track Your Order", link: "/trackyourorder" },
+  { id: "Shipping", link: "/shipping" },
+  { id: "Returns & Exchanges", link: "/returnsandexchanges" },
+  { id: "FAQ", link: "/faq" },
+  { id: "Promo Terms & Conditions", link: "/promotermsandconditions" },
+  { id: "Limited Warranty", link: "/limitedwarranty" },
+];
+export const Information = [
+  { id: "Size Guide", link: "/sizeguide" },
+  { id: "Care Instructions", link: "/careinstructions" },
+  { id: "Klarna Pay Installments", link: "/klarnapayinstallments" },
+  { id: "Shop Pay Installments", link: "/shoppayinstallments" },
+  { id: "Student Discount", link: "/studentdiscount" },
+  { id: "Gift Cards", link: "/giftcards" },
+  { id: "Give $10, Get $10", link: "/give10get10" },
+];
+export const Locations = [
+  { temp: "86°", time: "3:17", location: "Rio de Janeiro, BR" },
+  { temp: "80°", time: "2:17", location: "Grand Turk, TC" },
+  { temp: "84°", time: "0:17", location: "Roatan, HN" },
+  { temp: "80°", time: "20:17", location: "Kihei, HI, USA" },
+  { temp: "75°", time: "3:17", location: "Mar del Plata, AR" },
+  { temp: "82°", time: "20:17", location: "Tahiti, PF" },
+];
+

@@ -13,7 +13,7 @@ const Marquee = () => {
       .timeline({
         scrollTrigger: {
           trigger: ".Marquee",
-          start: "-10% top",
+          start: "-15% top",
         },
       })
       .to(".overlay1", {
